@@ -1,0 +1,64 @@
+html
+  head
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles/custom.css")
+
+    //- fontawesome
+    script(src='https://kit.fontawesome.com/606ed466f6.js', crossorigin='anonymous')
+    script(src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest")
+    script(src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest")
+  body
+    // Background
+    .background
+      img.img-fluid(src='https://picsum.photos/1500/250')
+    // Navigation
+    nav.navbar.navbar-expand-lg.sticky-top.navbar-light.bg-light.border-bottom
+      button.navbar-toggler.ml-auto(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse.justify-content-center
+        ul.navbar-nav
+          li.nav-item.ml-5
+            a.nav-link(href='/') Home
+          li.nav-item.ml-5
+            a.nav-link(href='#') Đi và mộng mơ
+          li.nav-item.ml-5.dropdown
+            a.nav-link.dropdown-toggle(href='#' data-toggle="dropdown") Tiếng Nhật thiệt khó
+            ul.dropdown-menu
+              li
+                a.dropdown-item(href="#") Nikkei Kotoba
+              li
+                a.dropdown-item(href="#") Lượm lặt
+          li.nav-item.ml-5
+            a.nav-link(href='/post') Cơm nhà kiểu Nhật
+            ul.dropdown-menu
+              li
+                a.dropdown-item(href="#") Bếp của Harumi
+              li
+                a.dropdown-item(href="#") Depachika Salad
+          li.nav-item.ml-5
+            a.nav-link(href='#') Tản mản linh tinh
+          li.nav-item.ml-5
+            a.nav-link(href='/about') About
+          li.nav-item.ml-5
+            a.nav-link(href='/contact') Contact
+        
+    .container.mt-5
+    
+      block content
+        
+    block footer
+      footer.border-top.mt-3
+        .container
+          .row.justify-content-center
+            .col-lg-6.col-sm-12.pb-2.text-center
+              p.row.justify-content-center.mt-4
+                a(href='')
+                  i.fab.fa-facebook-f.fa-lg.icon-footer
+                a.ml-3(href='')
+                  i.fab.fa-twitter.fa-lg.icon-footer
+                a.ml-3(href='')
+                  i.fab.fa-instagram.fa-lg.icon-footer
+                a.ml-3(href='')
+                  i.fab.fa-pinterest.fa-lg.icon-footer
+                a.ml-3(href='')
+                  i.fab.fa-youtube.fa-lg.icon-footer

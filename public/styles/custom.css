@@ -1,0 +1,24 @@
+.card {
+	border: none;
+}
+
+footer a {
+	color: #3b3b3b;
+}
+
+footer a:hover {
+	color: #666565;
+	transition: 0.2s;
+}
+
+.pl {
+	padding-left: 18rem;
+}
+
+.pl-active {
+	padding-left: 22rem;
+}
+
+.dropdown-menu:hover {
+	
+}

@@ -1,0 +1,42 @@
+extends ../layouts/common
+
+block content
+
+  div#editorjs
+
+  button#save.btn.btn-primary Save
+
+  script(type='text/javascript').
+      
+    var addbtn = document.getElementById('save');
+    
+    addbtn.addEventListener('click', add);
+    
+    function add() {
+      editor.save().then((outputData) => {
+        console.log('Article data: ', outputData)
+        Post.create({
+          caption: 'bala',
+          imageUrl: null,
+          postDate: new Date(),
+          content: outputData
+        });
+      }).catch((error) => {
+        console.log('Saving failed: ', error)
+      });
+    }
+
+    const editor = new EditorJS({
+      /**
+      * Id of Element that should contain Editor instance
+      */
+      holder: 'editorjs',
+      tool: {
+        header: {
+          class: Header,
+          inlineToolbar: ['link']
+        }
+      }
+    });
+
+    

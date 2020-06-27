@@ -1,0 +1,58 @@
+extends ../layouts/common
+
+block content
+
+  .row
+    #content-post.col-12.col-md-8
+      each post in posts
+        .card.mb-5(style='max-width: 700px;')
+          .row.no-gutters
+            .col-md-4
+              img.card-img(src=post.imageUrl)
+            .col-md-8
+              .card-body
+                h5.card-title= post.caption
+                p.text-muted Post by Luan Dinh,
+                  span.pl-2= post.postDate.toLocaleDateString()
+                p.card-text= post.content
+                a.btn.btn-primary(href="/" + post._id + "/detail") keep reading
+      each data in datas
+        if data.type === 'header'
+          if data.data.level === 1
+            h1= data.data.text
+          if data.data.level === 2
+            h2= data.data.text
+          if data.data.level === 3
+            h3= data.data.text
+        if data.type === 'paragraph'
+          p= data.data.text
+        if data.type === 'list'
+          ul
+            each item in data.data.items
+              li= item
+        if data.type === 'image'
+          img(src=data.data.url)
+
+    // side bar
+    .col-12.col-md-4
+      .container
+        h5.text-muted ABOUT ME
+        img(src='../../assets/anh2.JPEG', width="300", height="300")
+        p.mt-3
+          | Hi! Mình là Thơ Hana, hiện đang sống và làm việc tại Nhật. Trang blog này là một góc chia sẻ nho nhỏ về tiếng Nhật, cuộc sống hàng ngày, hay cả những chuyến đi mà mình may mắn được trải nghiệm nơi đây.
+        .input-group.mt-5
+          input.form-control(type='text', placeholder='Search here...')
+          .input-group-append
+            button.btn.btn-dark(type='button')
+              i.fas.fa-search
+        .mt-3
+          h5.text-muted Hot Topic
+          each post in posts
+            .card.pb-3.col-sm-4.border-bottom(style='max-width: 400px;')
+              .row.no-gutters
+                .col-md-4
+                  img.card-img.mt-4(src=post.imageUrl, style='width: 90px; height: 90px;')
+                .col-sm-4.col-md-8
+                  .card-body
+                    h5.card-title= post.caption
+                    p.card-text.text-truncate= post.content

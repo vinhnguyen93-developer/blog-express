@@ -1,0 +1,8 @@
+extends ../layouts/common
+
+block content
+
+  .container.py-5
+    h3= post.caption
+    img(src=post.imageUrl, width="900")
+    p= post.content
